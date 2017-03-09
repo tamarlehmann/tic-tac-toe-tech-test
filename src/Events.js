@@ -41,7 +41,7 @@ $(document).ready(function() {
     }
 
   $(".btn-ng").click(function(){
-    var game = new Game(player1, player2)
+    var game = new Game(player1, player2);
   });
 
 });

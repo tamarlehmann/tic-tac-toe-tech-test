@@ -13,6 +13,15 @@ describe("Game", function(){
       expect(game._players[1]).toEqual(player2);
     });
 
+    it("Has a current player", function(){
+      expect(game._currentPlayer).toEqual(player1);
+    });
+
+    it("Switches Players after each turn", function(){
+      game.switchPlayer();
+      expect(game._currentPlayer).toEqual(player2);
+    });
+
   });
 
 });
