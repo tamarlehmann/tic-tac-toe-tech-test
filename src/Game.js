@@ -1,8 +1,9 @@
 "use strict";
 
-function Game(player1, player2){
+function Game(player1, player2, grid = new Grid()){
   this._players = [player1, player2];
   this._currentPlayer = this._players[0];
+  this._grid = grid;
 }
 
 Game.prototype.Player1 = function(){
@@ -18,4 +19,8 @@ Game.prototype.switchPlayer = function(){
     this._currentPlayer = this._players[1]; } else {
       this._currentPlayer = this._players[0];
     }
+};
+
+Game.prototype.displayGrid = function(){
+  return this._grid
 };
