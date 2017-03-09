@@ -1,12 +1,14 @@
 describe("Players", function(){
 
   beforeEach(function(){
-    player1 = new Player("Player 1");
-    player2 = new Player("Player 2");
+    player1 = new Player();
+    player2 = new Player();
   });
 
   describe("Player Attributes", function(){
     it("Each player has a name attribute", function(){
+      player1.setName("Player 1");
+      player2.setName("Player 2");
       expect(player1._name).toEqual("Player 1");
       expect(player2._name).toEqual("Player 2");
     });
