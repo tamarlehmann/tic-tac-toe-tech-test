@@ -2,6 +2,7 @@ $(document).ready(function() {
     var player1 = new Player();
     var player2 = new Player();
     $(".PlayerCounters").hide();
+    $(".NewGame").hide();
 
   $("#submit").click(function(e){
       player1.setName($("#player_1_name").val());
@@ -28,6 +29,7 @@ $(document).ready(function() {
       hideChosenCounter();
       $("#counterInstructions").text(player2._name + ", please choose your counter: ");
       if (player1._counter && player2._counter !== null) $(".PlayerCounters").hide();
+      if (player1._counter && player2._counter !== null)  $(".NewGame").show();
     });
 
     function hideChosenCounter(){
@@ -37,5 +39,9 @@ $(document).ready(function() {
         $("#O").hide();
       }
     }
+
+  $(".btn-ng").click(function(){
+    var game = new Game(player1, player2)
+  });
 
 });
