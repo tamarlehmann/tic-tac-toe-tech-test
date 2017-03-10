@@ -5,12 +5,18 @@ describe("Grid", function(){
   });
 
   describe("Grid: Board", function(){
-    it("Has 3 rows of squares", function(){
-      expect(grid._squares.length).toEqual(3);
+    it("Should be a defined object", function(){
+       expect(grid instanceof(Grid)).toBe(true);
     });
 
-    it("Each row has 3 columns of squares", function(){
-      expect(grid._squares[0].length).toEqual(3);
+    it("Has 9 squares in total", function(){
+      expect(grid._squares.length).toEqual(9);
     });
+
+    it("Each square is undefined to begin with", function(){
+      for(var i = 0; i < 10; i++)
+        { expect(grid._squares[i]).toEqual(undefined); }
+    });
+
   });
 });
